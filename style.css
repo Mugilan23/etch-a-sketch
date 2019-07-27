@@ -1,35 +1,26 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  background: #686262;
 }
 
 #container {
   display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  justify-content: center;
-  column-gap: 20px;
-  margin-top: 80px;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  border: 5px solid #111;
+  width: 500px;
+  height: 500px;
 }
 
-.grid {
-  grid-column: 2 / 3;
-  --sideSize: 16;
-  width: 600px;
-  height: 600px;
-  display: grid;
-  grid-template-columns: repeat(var(--sideSize), 1fr);
-  grid-template-rows: repeat(var(--sideSize), 1fr);
-  gap: 1px;
-  border: 5px solid #333;
-  background: #333;
+.item {
+  background: white;
 }
 
-.block {
-  background: lightblue;
+.hovered {
+  background: black;
 }

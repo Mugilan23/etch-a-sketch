@@ -1,19 +1,12 @@
 const container_div = document.getElementById('container');
 
-function createGrid(size, side) {
-  const grid = document.createElement('div');
-  grid.classList.add('grid');
-  container_div.appendChild(grid);
-  grid.style.setProperty('--sideSize', side);
-
-  for (let i = 0; i < size; i++) {
-    const block = document.createElement('div');
-    block.classList.add('block');
-    grid.appendChild(block);
-  }
+for (let i = 0; i < 16; i++) {
+    for (let j = 0; j < 16; j++) {
+        const item = document.createElement('div');
+        item.classList.add('item');
+        item.addEventListener('mouseenter', () => {
+            item.classList.add('hovered');
+        });
+        container_div.appendChild(item);
+    }
 }
-
-let sideSize = 16;
-let size = sideSize ** 2;
-
-createGrid(size, sideSize);
